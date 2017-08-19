@@ -4,9 +4,9 @@
   <subtitle>No pains, no gains.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://silenceneo-xw.github.io/"/>
   <updated>2017-08-19T15:06:28.960Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://silenceneo-xw.github.io/</id>
   
   <author>
     <name>Silenceneo</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/08/19/hello-world/"/>
-    <id>http://yoursite.com/2017/08/19/hello-world/</id>
+    <link href="https://silenceneo-xw.github.io/2017/08/19/hello-world/"/>
+    <id>https://silenceneo-xw.github.io/2017/08/19/hello-world/</id>
     <published>2017-08-19T04:03:16.744Z</published>
     <updated>2017-08-19T15:06:28.960Z</updated>
     
@@ -39,14 +39,14 @@
     
     </summary>
     
-      <category term="搭建博客" scheme="http://yoursite.com/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+      <category term="搭建博客" scheme="https://silenceneo-xw.github.io/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
+      <category term="npm" scheme="https://silenceneo-xw.github.io/tags/npm/"/>
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="https://silenceneo-xw.github.io/tags/hexo/"/>
     
-      <category term="github" scheme="http://yoursite.com/tags/github/"/>
+      <category term="github" scheme="https://silenceneo-xw.github.io/tags/github/"/>
     
   </entry>
   
