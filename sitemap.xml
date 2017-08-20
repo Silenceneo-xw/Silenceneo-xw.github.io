@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://silenceneo-xw.github.io/2017/08/19/hello-world/</loc>
+    <loc>https://silenceneo-xw.github.io/about/index.html</loc>
     
-    <lastmod>2017-08-20T06:36:55.599Z</lastmod>
+    <lastmod>2017-08-20T12:36:58.864Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://silenceneo-xw.github.io/about/index.html</loc>
+    <loc>https://silenceneo-xw.github.io/404.html</loc>
     
-    <lastmod>2017-08-20T06:33:03.311Z</lastmod>
+    <lastmod>2017-08-20T10:39:13.784Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://silenceneo-xw.github.io/2017/08/19/hello-world/</loc>
+    
+    <lastmod>2017-08-20T06:36:55.599Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>https://silenceneo-xw.github.io/tags/index.html</loc>
     
     <lastmod>2017-08-20T06:18:49.202Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://silenceneo-xw.github.io/404.html</loc>
-    
-    <lastmod>2017-08-19T16:08:49.452Z</lastmod>
     
   </url>
   
