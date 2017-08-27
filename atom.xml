@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://silenceneo-xw.github.io/"/>
-  <updated>2017-08-27T12:57:12.217Z</updated>
+  <updated>2017-08-27T13:40:54.211Z</updated>
   <id>https://silenceneo-xw.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://silenceneo-xw.github.io/2017/08/23/Android%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/RecyclerView%E7%9A%84%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/"/>
     <id>https://silenceneo-xw.github.io/2017/08/23/Android学习记录/RecyclerView的简单用法/</id>
     <published>2017-08-23T14:08:15.000Z</published>
-    <updated>2017-08-27T12:57:12.217Z</updated>
+    <updated>2017-08-27T13:40:54.211Z</updated>
     
     <content type="html"><![CDATA[<p><blockquote class="blockquote-center"><h2 style="margin: 0;">前面的话</h2><br>本文使用的 IDE 是 Android Studio 2.3.1 ，模拟器是夜神模拟器 5.0.0.0 。<br>文章为学习《第一行代码——Android》（第二版）时所记录的内容，可能包含遇到的问题，仅供学习交流。<br></blockquote><br><a id="more"></a></p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先，在<code>Android Studio</code>上新建一个项目，项目名叫<code>RecyclerViewTest</code>，并让<code>Android Studio</code>自动帮我们创建好活动。</p>
