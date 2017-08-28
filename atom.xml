@@ -4,9 +4,9 @@
   <subtitle>No pains, no gains.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://silenceneo-xw.github.io/"/>
+  <link href="http://silenceneoxw.site/"/>
   <updated>2017-08-27T13:40:54.211Z</updated>
-  <id>https://silenceneo-xw.github.io/</id>
+  <id>http://silenceneoxw.site/</id>
   
   <author>
     <name>Silenceneo</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>RecyclerView的简单用法</title>
-    <link href="https://silenceneo-xw.github.io/2017/08/23/Android%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/RecyclerView%E7%9A%84%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/"/>
-    <id>https://silenceneo-xw.github.io/2017/08/23/Android学习记录/RecyclerView的简单用法/</id>
+    <link href="http://silenceneoxw.site/2017/08/23/Android%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/RecyclerView%E7%9A%84%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/"/>
+    <id>http://silenceneoxw.site/2017/08/23/Android学习记录/RecyclerView的简单用法/</id>
     <published>2017-08-23T14:08:15.000Z</published>
     <updated>2017-08-27T13:40:54.211Z</updated>
     
@@ -56,19 +56,19 @@
     
     </summary>
     
-      <category term="Android学习笔记" scheme="https://silenceneo-xw.github.io/categories/Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Android学习笔记" scheme="http://silenceneoxw.site/categories/Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="https://silenceneo-xw.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://silenceneoxw.site/tags/Android/"/>
     
-      <category term="RecyclerView" scheme="https://silenceneo-xw.github.io/tags/RecyclerView/"/>
+      <category term="RecyclerView" scheme="http://silenceneoxw.site/tags/RecyclerView/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://silenceneo-xw.github.io/2017/08/19/hello-world/"/>
-    <id>https://silenceneo-xw.github.io/2017/08/19/hello-world/</id>
+    <link href="http://silenceneoxw.site/2017/08/19/hello-world/"/>
+    <id>http://silenceneoxw.site/2017/08/19/hello-world/</id>
     <published>2017-08-19T04:03:16.744Z</published>
     <updated>2017-08-21T14:32:04.183Z</updated>
     
@@ -89,14 +89,14 @@
     
     </summary>
     
-      <category term="搭建博客" scheme="https://silenceneo-xw.github.io/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+      <category term="搭建博客" scheme="http://silenceneoxw.site/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="hexo" scheme="https://silenceneo-xw.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://silenceneoxw.site/tags/hexo/"/>
     
-      <category term="github" scheme="https://silenceneo-xw.github.io/tags/github/"/>
+      <category term="github" scheme="http://silenceneoxw.site/tags/github/"/>
     
-      <category term="test" scheme="https://silenceneo-xw.github.io/tags/test/"/>
+      <category term="test" scheme="http://silenceneoxw.site/tags/test/"/>
     
   </entry>
   
