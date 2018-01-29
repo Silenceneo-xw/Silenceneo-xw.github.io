@@ -3,7 +3,15 @@
   <entry>
     <title><![CDATA[2017年下学期程序设计实践-模拟测试3]]></title>
     <url>%2F2017%2F12%2F24%2FXTU%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5%2F2017%E5%B9%B4%E4%B8%8B%E5%AD%A6%E6%9C%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5-%E6%A8%A1%E6%8B%9F%E6%B5%8B%E8%AF%953%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[前面的话本文使用的编辑器是 Sublime Text 3，Build 3143，编译器是 GCC 5.2.1。文章为湘潭大学程序设计实践网站一些考试编程题目的个人题解，不保证是最优解法，仅供参考学习。 好久没敲算法代码了，就拿来练练手。网址如下所示：2017年下学期程序设计实践-模拟测试3。如果不能看到题目，可以直接搜索题号1304~1309。 Problem A数据范围不大，直接按照题意对于n+1个位置的每个位置进行放置，这样就能得到每次的消失量，取最大值即可。代码如下所示： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include &lt;cstdio&gt;const int maxn = 105;int c[maxn];int n, ac;int cal(int pos) &#123; int ans=0, cur=ac, l=pos, r=pos+1, cnt=1; pos = c[l]; while (cur == pos) &#123; while (l&gt;=0 &amp;&amp; c[l]==cur) --l, ++cnt; while (r&lt;n &amp;&amp; c[r]==cur) ++r, ++cnt; if (cnt &lt; 3) break; ans += cnt; cnt = 0; if (n-ans+1 &lt; 3) break; if (l&gt;=0 &amp;&amp; r&lt;n) cur=c[l], pos=c[r]; else if (l &gt;= 0) cur=pos=c[l]; else cur=pos=c[r]; &#125; return ans ? ans-1 : ans;&#125;int main() &#123; int T; scanf("%d", &amp;T); while (T--) &#123; scanf("%d%d", &amp;n, &amp;ac); for (int i=0; i&lt;n; ++i) scanf("%d", c+i); int ans = 0; for (int i=0; i&lt;n; ++i) &#123; int t = cal(i); if (t &gt; ans) ans = t; &#125; printf("%d\n", ans); &#125; return 0;&#125; Problem B从左往右一直判断，满足条件计数加一，不满足计数就清零，过程中取最大值即可。代码如下所示： 1234567891011121314151617181920212223242526#include &lt;cstdio&gt;const int maxn = 10005;int f[maxn];int n;int main() &#123; int T; scanf("%d", &amp;T); while (T--) &#123; scanf("%d", &amp;n); for (int i=0; i&lt;n; ++i) scanf("%d", f+i); int ans=0, cnt=0; for (int i=2; i&lt;n; ++i) &#123; if (f[i] == f[i-1]+f[i-2]) &#123; ++cnt; if (cnt &gt; ans) ans = cnt; &#125; else cnt = 0; &#125; printf("%d\n", ans+2); &#125; return 0;&#125; Problem C签到题，作差看能不能被d整除即可（注意d为0的情况）。代码如下所示： 123456789101112#include &lt;cstdio&gt;int a, d, x;int main() &#123; int T; scanf("%d", &amp;T); while (T--) &#123; scanf("%d%d%d", &amp;a, &amp;d, &amp;x); puts((d!=0&amp;&amp;(x-a)%d==0)||(d==0&amp;&amp;x==a) ? "Yes" : "No"); &#125; return 0;&#125; Problem D二分查找。从小到大构造出所有的美丽数，然后进行二分查找作差即可。代码如下所示： 123456789101112131415161718192021222324252627282930313233#include &lt;cstdio&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;using namespace std;typedef long long ll;ll a, b;vector&lt;ll&gt; v;void init() &#123; for (int i=2; i&lt;=63; ++i) for (int j=i-2; j&gt;=0; --j) &#123; ll num = 0; for (int k=0; k&lt;i; ++k) if (k != j) num |= 1ll&lt;&lt;k; v.push_back(num); &#125;&#125;int main() &#123; init(); int T; scanf("%d", &amp;T); while (T--) &#123; scanf("%I64d%I64d", &amp;a, &amp;b); int l = lower_bound(v.begin(), v.end(), a)-v.begin(); int r = lower_bound(v.begin(), v.end(), b)-v.begin(); if (r==v.size() || b&lt;v[r]) --r; printf("%d\n", r-l+1); &#125; return 0;&#125; Problem E水题。数据范围比较小，直接模拟计算即可。代码如下所示： 12345678910111213141516171819202122232425#include &lt;cstdio&gt;int n;int check(int x) &#123; for (int i=29; i&gt;=0; --i) if (x &amp; (1&lt;&lt;i)) return i; return -1;&#125;int main() &#123; int T; scanf("%d", &amp;T); while (T--) &#123; scanf("%d", &amp;n); int l=0, r=0; while (n &gt; 1) &#123; int pos = check(n); pos=1&lt;&lt;(pos-1), ++l; r+=pos, n-=pos; &#125; printf("%d %d\n", l, r); &#125; return 0;&#125; Problem F按照题意，直接暴力枚举出所有子串，并用set进行去重即可（也可以找出所有子串后进行排序，输出时判断一下就好了）。代码如下所示： 12345678910111213141516171819202122232425#include &lt;cstdio&gt;#include &lt;string&gt;#include &lt;set&gt;using namespace std;const int maxn = 105;char str[maxn];int n;set&lt;string&gt; ans;set&lt;string&gt;::iterator it;int main() &#123; int T; scanf("%d", &amp;T); while (T--) &#123; scanf("%d%s", &amp;n, str); ans.clear(); string s(str); for (size_t i=0; i+n-1&lt;s.size(); ++i) ans.insert(s.substr(i, n)); for (it=ans.begin(); it!=ans.end(); ++it) puts((*it).c_str()); puts(""); &#125; return 0;&#125; 总结题目总体来说，及格相当容易，有比赛经验的队员，不涉及知识盲区，想AK也是非常容易的，区分度还可以。]]></content>
+      <categories>
+        <category>XTU程序设计实践</category>
+      </categories>
+      <tags>
+        <tag>XTU</tag>
+        <tag>题解</tag>
+        <tag>程序设计实践</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[2017年下学期程序设计实践-模拟测试2]]></title>
@@ -14,8 +22,8 @@
       </categories>
       <tags>
         <tag>XTU</tag>
-        <tag>程序设计实践</tag>
         <tag>题解</tag>
+        <tag>程序设计实践</tag>
       </tags>
   </entry>
   <entry>
@@ -27,8 +35,8 @@
       </categories>
       <tags>
         <tag>XTU</tag>
-        <tag>题解</tag>
         <tag>C语言程序设计</tag>
+        <tag>题解</tag>
       </tags>
   </entry>
   <entry>
@@ -40,8 +48,8 @@
       </categories>
       <tags>
         <tag>XTU</tag>
-        <tag>程序设计实践</tag>
         <tag>题解</tag>
+        <tag>程序设计实践</tag>
       </tags>
   </entry>
   <entry>
@@ -53,8 +61,8 @@
       </categories>
       <tags>
         <tag>XTU</tag>
-        <tag>题解</tag>
         <tag>C语言程序设计</tag>
+        <tag>题解</tag>
       </tags>
   </entry>
   <entry>
