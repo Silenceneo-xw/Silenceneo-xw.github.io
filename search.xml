@@ -8,7 +8,15 @@
   <entry>
     <title><![CDATA[2017年下学期程序设计实践-模拟测试2]]></title>
     <url>%2F2017%2F12%2F24%2FXTU%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5%2F2017%E5%B9%B4%E4%B8%8B%E5%AD%A6%E6%9C%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5-%E6%A8%A1%E6%8B%9F%E6%B5%8B%E8%AF%952%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[前面的话本文使用的编辑器是 Sublime Text 3，Build 3143，编译器是 GCC 5.2.1。文章为湘潭大学程序设计实践网站一些考试编程题目的个人题解，不保证是最优解法，仅供参考学习。 好久没敲算法代码了，就拿来练练手。网址如下所示：2017年下学期程序设计实践-模拟测试2。如果不能看到题目，可以直接搜索题号1298~1303。 Problem A签到题，直接按照题意等差数列求和，进行一下转换即可。代码如下所示： 1234567891011121314#include &lt;cstdio&gt;#include &lt;cmath&gt;typedef long long ll;int n;int main() &#123; while (~scanf("%d", &amp;n)) &#123; int t = (int)sqrt((n&lt;&lt;1)+0.5); if (((ll)t*(t+1)&gt;&gt;1) &lt; n) ++t; printf("%d %d\n", t, n-((ll)t*(t-1)&gt;&gt;1)); &#125; return 0;&#125; Problem B很显然的一道水题，按题意模拟即可。代码如下所示： 123456789101112131415161718192021222324252627#include &lt;cstdio&gt;const int maxn = 105;char str[maxn];char op[5], t1[5], t2[5];int main() &#123; while (~scanf("%s", str+1)) &#123; int cnt = 0; while (~scanf("%s", op) &amp;&amp; op[0]!='E') &#123; int x, y; if (op[0] == 'T') &#123; scanf("%s%s", t1, t2); for (int i=1; str[i]; ++i) if (str[i] == t1[0]) str[i] = t2[0]; &#125; else &#123; scanf("%d%d%s", &amp;x, &amp;y, t1); for (int i=x; i&lt;=y; ++i) str[i] = t1[0]; &#125; printf("%d:%s\n", ++cnt, str+1); &#125; puts(""); &#125; return 0;&#125; Problem C水题，统计判断即可。代码如下所示： 12345678910111213141516171819202122#include &lt;cstdio&gt;#include &lt;cstring&gt;char str[7];int num[7];int n, m, k;int main() &#123; int T; scanf("%d", &amp;T); while (T--) &#123; scanf("%s%d", str, &amp;m); memset(num, 0, sizeof(num)); for (int i=0; str[i]; ++i) ++num[str[i]-'0']; for (int i=1; i&lt;=m; ++i) &#123; scanf("%d%d", &amp;n, &amp;k); printf("%d:%s\n", i, num[k]+num[k!=1]&gt;=n ? "true" : "false"); &#125; puts(""); &#125; return 0;&#125; Problem D水题，模拟判断即可。代码如下所示： 123456789101112131415161718192021222324252627282930313233343536#include &lt;cstdio&gt;#include &lt;algorithm&gt;const int maxn = 20;int p[maxn];int n;bool check() &#123; for (int i=0; i&lt;n; ++i) if (p[i]) return false; return true;&#125;int main() &#123; int T; scanf("%d", &amp;T); while (T--) &#123; scanf("%d", &amp;n); for (int i=0; i&lt;n; ++i) scanf("%d", p+i); bool ok = true; for (int i=1; i&lt;=1000&amp;&amp;ok; ++i) &#123; int t = p[0]; for (int j=1; j&lt;n; ++j) p[j-1] = abs(p[j-1]-p[j]); p[n-1] = abs(p[n-1]-t); if (check()) &#123; printf("%d\n", i); ok = false; &#125; &#125; if (ok) puts("Impossible"); &#125; return 0;&#125; Problem E一道二叉搜索树的建树以及搜索题。对于每个序列建立一棵二叉搜索树，然后对于每一棵树，dfs去得到各个子树的高度并且判断左右子树之差即可。代码如下所示： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566#include &lt;cstdio&gt;#include &lt;algorithm&gt;using namespace std;const int maxn = 1005;struct node &#123; int val, l, r, h;&#125; p[maxn];int n, cnt;int new_node() &#123; p[cnt].l = p[cnt].r = -1; p[cnt].h = 1; return cnt++;&#125;int build(int id, int val) &#123; if (id &lt; 0) &#123; id = new_node(); p[id].val = val; return id; &#125; int l=p[id].l, r=p[id].r; if (val &lt; p[id].val) l = p[id].l = build(l, val); else r = p[id].r = build(r, val); int h = 0; if (l &lt; 0) h = p[r].h; else if (r &lt; 0) h = p[l].h; else h = max(p[l].h, p[r].h); p[id].h = h+1; return id;&#125;bool check(int id) &#123; if (id &lt; 0) return true; int l=p[id].l, r=p[id].r; if (l == r) return true; if (l &lt; 0) return p[r].h &lt; 2; if (r &lt; 0) return p[l].h &lt; 2; return check(l) &amp;&amp; check(r) &amp;&amp; abs(p[l].h-p[r].h)&lt;2;&#125;int main() &#123; int T; scanf("%d", &amp;T); while (T--) &#123; scanf("%d", &amp;n); int id = -1; cnt = 0; int num; for (int i=0; i&lt;n; ++i) &#123; scanf("%d", &amp;num); id = build(id, num); &#125; puts(check(id) ? "Yes" : "No"); &#125; return 0;&#125; Problem F动态规划题。熟读题意，比较容易发现其实就是区间dp，状态转移方程如下图所示： 直接记忆化搜索即可。代码如下所示： 1234567891011121314151617181920212223242526272829303132#include &lt;cstdio&gt;#include &lt;cstring&gt;#include &lt;algorithm&gt;using namespace std;typedef long long ll;const int maxn = 65;ll dp[maxn][maxn];int p[maxn];int n;ll dfs(int l, int r) &#123; if (l &gt; r) return dp[l][r] = 0; if (l == r) return dp[l][r] = p[l]; if (dp[l][r] &gt;= 0) return dp[l][r]; return dp[l][r] = min((dfs(l+1, r)&lt;&lt;1)+p[l], (dfs(l, r-1)&lt;&lt;1)+p[r]);&#125;int main() &#123; int T; scanf("%d", &amp;T); while (T--) &#123; scanf("%d", &amp;n); for (int i=0; i&lt;n; ++i) scanf("%d", p+i); memset(dp, -1, sizeof(dp)); printf("%I64d\n", dfs(0, n-1)); &#125; return 0;&#125; 总结题目总体来说，及格相当容易，有比赛经验的队员，不涉及知识盲区，想AK也是那么容易，区分度还可以。]]></content>
+      <categories>
+        <category>XTU程序设计实践</category>
+      </categories>
+      <tags>
+        <tag>XTU</tag>
+        <tag>程序设计实践</tag>
+        <tag>题解</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[2017年下学期《C语言程序设计》课堂测验-2题解]]></title>
@@ -19,8 +27,8 @@
       </categories>
       <tags>
         <tag>XTU</tag>
-        <tag>C语言程序设计</tag>
         <tag>题解</tag>
+        <tag>C语言程序设计</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +40,8 @@
       </categories>
       <tags>
         <tag>XTU</tag>
-        <tag>题解</tag>
         <tag>程序设计实践</tag>
+        <tag>题解</tag>
       </tags>
   </entry>
   <entry>
@@ -45,8 +53,8 @@
       </categories>
       <tags>
         <tag>XTU</tag>
-        <tag>C语言程序设计</tag>
         <tag>题解</tag>
+        <tag>C语言程序设计</tag>
       </tags>
   </entry>
   <entry>
